@@ -7,7 +7,7 @@ const EventsIndex = ({ data }) => {
       {data.map((item) => {
         return (
           <a key={item.id} href={`/events/${item.id}`}>
-            <Image width={200} height={100} src={item.image} alt={item.title} />
+            <Image width={300} height={300} src={item.image} alt={item.title} />
             <h2>{item.title}</h2>
             <p>{item.description}</p>
           </a>

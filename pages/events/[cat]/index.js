@@ -1,13 +1,49 @@
-const CategoryPage = () => {
+import Link from "next/link";
+import Image from "next/image";
+
+const CategoryPage = ({ data }) => {
   return (
     <div>
-      <h1> Events in London</h1>
-      <a href="/event/event1">Event 1</a>
-      <a href="/event/event2">Event 2</a>
-      <a href="/event/event3">Event 3</a>
-      <a href="/event/event4">Event 4</a>
+      {data.map(
+        (item) => (
+          console.log(item),
+          (
+            <Link key={item.id} href={`/events/${item.id}`}>
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={500}
+                height={500}
+              />
+              <h2>{item.title} </h2>
+            </Link>
+          )
+        )
+      )}
     </div>
   );
 };
-
 export default CategoryPage;
+
+export async function getStaticPaths() {
+  const { events_categories } = await import("../../data/data.json");
+  const allPaths = events_categories.map((item) => {
+    return {
+      params: { cat: item.id.toString() },
+    };
+  });
+  return {
+    paths: allPaths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  const id = context.params.cat;
+  const { allEvents } = await import("../../data/data.json");
+  console.log(allEvents);
+  const data = allEvents.filter((item) => item.city === id);
+  console.log(data);
+
+  return { props: { data, pageName: id } };
+}
