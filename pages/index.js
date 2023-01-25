@@ -25,7 +25,6 @@ export default function Home({ data }) {
         <h1>Main Page</h1>
         <div>
           {data.map((item) => {
-            console.log(item, "this is item");
             return (
               <a key={item.id} href={`/events/${item.id}`}>
                 <Image
@@ -45,13 +44,22 @@ export default function Home({ data }) {
     </>
   );
 }
-
+// Server Side Rendering
 export async function getServerSideProps() {
   const { events_categories } = await import("./data/data.json");
-  console.log(events_categories);
   return {
     props: {
       data: events_categories,
     },
   };
 }
+
+// Client Side Rendering
+// export async function getStaticProps() {
+//   const { events_categories } = await import("./data/data.json");
+//   return {
+//     props: {
+//       data: events_categories,
+//     },
+//   };
+// }
