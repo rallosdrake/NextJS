@@ -4,22 +4,12 @@ import Image from "next/image";
 const CategoryPage = ({ data }) => {
   return (
     <div>
-      {data.map(
-        (item) => (
-          console.log(item),
-          (
-            <Link key={item.id} href={`/events/${item.id}`}>
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={500}
-                height={500}
-              />
-              <h2>{item.title} </h2>
-            </Link>
-          )
-        )
-      )}
+      {data.map((item) => (
+        <Link key={item.id} href={`/events/${item.id}`}>
+          <Image src={item.image} alt={item.title} width={500} height={500} />
+          <h2>{item.title} </h2>
+        </Link>
+      ))}
     </div>
   );
 };
@@ -39,11 +29,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+  console.log(context);
   const id = context.params.cat;
   const { allEvents } = await import("../../data/data.json");
-  console.log(allEvents);
   const data = allEvents.filter((item) => item.city === id);
-  console.log(data);
 
   return { props: { data, pageName: id } };
 }
