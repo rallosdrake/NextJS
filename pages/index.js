@@ -33,7 +33,7 @@ export default function Home({ data }) {
         <div>
           {data.map((item) => {
             return (
-              <a key={item.id} href={`/events/${item.id}`}>
+              <Link key={item.id} href={`/events/${item.id}`}>
                 <Image
                   width={200}
                   height={100}
@@ -42,7 +42,7 @@ export default function Home({ data }) {
                 />
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>
-              </a>
+              </Link>
             );
           })}
         </div>
