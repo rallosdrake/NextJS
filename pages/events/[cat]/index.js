@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const CategoryPage = ({ data }) => {
+const CategoryPage = ({ data, pageName }) => {
+  pageName = pageName.charAt(0).toUpperCase() + pageName.slice(1).toLowerCase();
+
   return (
     <div>
+      <h2>Events in {pageName}</h2>
       {data.map((item) => (
-        <Link key={item.id} href={`/events/${item.id}`}>
+        <Link key={item.id} href={`/events/${pageName}`}>
           <Image src={item.image} alt={item.title} width={500} height={500} />
           <h2>{item.title} </h2>
         </Link>
