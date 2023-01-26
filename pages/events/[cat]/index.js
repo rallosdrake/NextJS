@@ -8,7 +8,7 @@ const CategoryPage = ({ data, pageName }) => {
     <div>
       <h2>Events in {pageName}</h2>
       {data.map((item) => (
-        <Link key={item.id} href={`/events/${pageName}`}>
+        <Link key={item.id} href={`/events/${item.city}/${item.id}`}>
           <Image src={item.image} alt={item.title} width={500} height={500} />
           <h2>{item.title} </h2>
         </Link>
