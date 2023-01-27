@@ -6,8 +6,8 @@ const Header = () => {
     <header>
       <nav>
         <Image
-          width={300}
-          height={300}
+          width={30}
+          height={30}
           className="logo"
           alt="alt text here"
           src="https://i.pinimg.com/736x/7f/d7/bb/7fd7bba420c9d1659c29c0352ef77842.jpg"
