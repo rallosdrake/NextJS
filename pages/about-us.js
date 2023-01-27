@@ -1,8 +1,6 @@
-import styles from "@/styles/Home.module.css";
-
 const AboutUsPage = () => {
   return (
-    <div className={styles.AboutUsPage}>
+    <div>
       <h1> About us page</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque

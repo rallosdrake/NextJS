@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from "@/styles/Home.module.css";
 
 const HomePage = ({ data }) => {
   return (
-    <main className={styles.main}>
+    <main>
       <h1>Main Page</h1>
       <div>
         {data.map((item) => {
