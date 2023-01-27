@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import HomePage from "@/src/home/home-page";
+import Footer from "@/src/footer/footer";
+import Header from "@/src/header/header";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,24 +17,9 @@ export default function Home({ data }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header>
-        <nav>
-          <Image
-            width={300}
-            height={300}
-            className="logo"
-            alt="alt text here"
-            src="https://i.pinimg.com/736x/7f/d7/bb/7fd7bba420c9d1659c29c0352ef77842.jpg"
-          />
-          <Link href="/">Home</Link>
-          <Link href="/events">Events</Link>
-          <Link href="/about-us">About us</Link>
-        </nav>
-      </header>
+      <Header />
       <HomePage data={data} />
-      <footer className={styles.footer}>
-        <p> © 2022 Time to Code - A Project Built with Next.js </p>
-      </footer>
+      <Footer />
     </>
   );
 }
