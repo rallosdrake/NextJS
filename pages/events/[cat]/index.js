@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import CatEvent from "../../../src/components/events/CatEvent";
+import CatEvent from "../../../src/components/events/CatEvents";
 
 const CategoryPage = ({ data, pageName }) => (
   <CatEvent data={data} pageName={pageName} />
