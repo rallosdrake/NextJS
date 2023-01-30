@@ -1,12 +1,18 @@
 import Image from "next/image";
 
 const SingleEventPage = ({ data }) => {
+  const onClick = () => {
+    console.log("clicked");
+  };
+
   return (
     <h1>
       <div>
         <Image src={data.image} width={500} height={300} alt={data.title} />
         <h1>{data.title}</h1>
         <p>{data.description}</p>
+        <input type="email" />
+        <button onClick={onClick}>Submit</button>
       </div>
     </h1>
   );
