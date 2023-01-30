@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const HomePage = ({ data }) => {
   return (
-    <main>
+    <>
       <h1>Main Page</h1>
       <div>
         {data.map((item) => {
@@ -21,7 +21,7 @@ const HomePage = ({ data }) => {
           );
         })}
       </div>
-    </main>
+    </>
   );
 };
 
