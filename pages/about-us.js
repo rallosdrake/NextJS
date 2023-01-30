@@ -1,24 +1,48 @@
 const AboutUsPage = () => {
   return (
     <div>
-      <h1> About us page</h1>
+      <h1> About us Page</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        convallis ultrices mauris. Curabitur ut consequat nunc. Quisque gravida
-        tincidunt mi, a tempus nunc interdum eget. Curabitur venenatis metus id
-        purus euismod, sed efficitur leo consectetur. Orci varius natoque
-        penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        Vestibulum turpis dolor, pharetra et mi non, dapibus dictum tellus.
-        Nulla convallis tellus ac elementum vulputate. Maecenas ut dapibus nisi.
-        Etiam in feugiat neque, non lobortis leo. Suspendisse vel dolor aliquam,
-        suscipit erat id, volutpat nulla. Suspendisse potenti. Nulla ultricies
-        nisl vel sem auctor sodales. Ut id vulputate nisi, et gravida massa. Sed
-        ut leo sapien. Integer nec mi quis est cursus malesuada vitae non metus.
-        Vestibulum felis dolor, ornare vel diam a, tempor semper turpis. Duis
-        luctus tortor nec pretium porta. Cras feugiat, arcu non venenatis
-        auctor, orci lacus accumsan est, vitae suscipit felis lacus eu leo. Nunc
-        vel nisi nunc. Vivamus ultrices posuere fringilla.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
       </p>
+      <h2>Dlor in reprehenderit </h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+      <ul className="about_us_list">
+        <li>
+          <h3>Dlor in reprehenderit </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in
+          </p>
+        </li>
+        <li>
+          <h3>Sed do eiusmod tempor </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in
+          </p>
+        </li>
+      </ul>
     </div>
   );
 };
