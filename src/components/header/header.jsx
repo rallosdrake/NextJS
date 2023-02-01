@@ -33,29 +33,4 @@ export const Header = () => {
   );
 };
 
-// const Header = () => {
-//   const logo = import("../../../public/Images/logo.png");
-//   console.log(logo);
-//   return (
-//     <header>
-//       <div>
-//         <div className="topNav">
-//           <Image
-//             width={30}
-//             height={30}
-//             className="logo"
-//             alt="alt text here"
-//             src={"/Images/logo.png"}
-//           />
-//           <nav>
-//             <Link href="/">Home</Link>
-//             <Link href="/events">Events</Link>
-//             <Link href="/about-us">About us</Link>
-//           </nav>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// };
-
 export default Header;
