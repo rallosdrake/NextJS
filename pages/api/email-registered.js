@@ -2,17 +2,18 @@ import path from "path";
 import fs from "fs";
 
 function buildPath() {
-  return path.join(process.cwd(), "pages/data", "data.json");
+  return path.join(process.cwd(), "data", "data.json");
 }
 function extractData(filePath) {
-  const fileData = fs.readFileSync(filePath);
-  return JSON.parse(fileData);
+  const jsonData = fs.readFileSync(filePath);
+  const data = JSON.parse(jsonData);
+  return data;
 }
 
 export default function handler(req, res) {
-  const filePath = buildPath();
-  const { event_categories, allEvents } = extractData(filePath);
   const { method } = req;
+  const filePath = buildPath();
+  const { events_categories, allEvents } = extractData(filePath);
 
   if (!allEvents) {
     return res.status(404).json({ message: "No events found" });
@@ -41,7 +42,7 @@ export default function handler(req, res) {
     });
     fs.writeFileSync(
       filePath,
-      JSON.stringify({ event_categories, allEvents: newAllEvents })
+      JSON.stringify({ events_categories, allEvents: newAllEvents })
     );
 
     res

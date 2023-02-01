@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const EventsPage = ({ data }) => {
+const AllEvents = ({ data }) => {
   return (
     <div className="events_page">
       {data.map((item) => {
@@ -23,4 +23,4 @@ const EventsPage = ({ data }) => {
     </div>
   );
 };
-export default EventsPage;
+export default AllEvents;

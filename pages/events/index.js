@@ -1,14 +1,14 @@
-import EventsPage from "../../src/components/events/EventsPage";
+import AllEvents from "../../src/components/events/EventsPage";
 
-const EventsIndex = ({ data }) => {
-  return <EventsPage data={data} />;
+const EventsPage = ({ data }) => {
+  return <AllEvents data={data} />;
 };
 
-export default EventsIndex;
+export default EventsPage;
 
 // Client Side Rendering
 export async function getStaticProps() {
-  const { events_categories } = await import("../data/data.json");
+  const { events_categories } = await import("../../data/data.json");
 
   return {
     props: {
