@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 export default function SingleEvent({ data }) {
   const inputEmail = useRef();
   const router = useRouter();
-
+  const [message, setMessage] = useState("");
   const onSubmit = async (e) => {
     e.preventDefault();
     const emailValue = inputEmail.current.value;
@@ -14,8 +14,7 @@ export default function SingleEvent({ data }) {
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (!emailValue.match(validRegex)) {
-      console.log("fail");
-      return alert("Please enter a valid email address");
+      setMessage("Please enter a valid email address");
     }
 
     try {
@@ -28,6 +27,8 @@ export default function SingleEvent({ data }) {
       });
       if (!response.ok) throw new Error("Something went wrong");
       const data = await response.json();
+      setMessage(data.message);
+      inputEmail.current.value = "";
     } catch (e) {
       console.error(e);
     }
@@ -47,6 +48,7 @@ export default function SingleEvent({ data }) {
         />
         <button type="submit">Submit</button>
       </form>
+      <p>{message}</p>
     </div>
   );
 }
