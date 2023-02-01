@@ -21,7 +21,6 @@ export default function SingleEvent({ data }) {
       });
       if (!response.ok) throw new Error("Something went wrong");
       const data = await response.json();
-      console.log(data);
     } catch (e) {
       console.error(e);
     }
